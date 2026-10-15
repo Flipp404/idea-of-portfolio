@@ -1,0 +1,608 @@
+/*
+--   #   #                              #   #
+--   #   #                              #   #
+--   ## ##   ###   # ##   #   #         ##  #   ###   #   #
+--   # # #  #   #  ##  #  #   #         # # #      #  #   #
+--   #   #  #####  #   #  #   #         #  ##   ####   # #
+--   #   #  #      #   #  #  ##         #   #  #   #   # #
+--   #   #   ###   #   #   ## #         #   #   ####    #
+*/
+
+/* Lista de navegação com display flexível */
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+/* Estilo dos itens da lista de navegação */
+.nav-list li {
+  letter-spacing: 5px;
+  margin-left: 52px; 
+}
+
+/* Estilo para o ícone de menu no mobile, inicialmente oculto */
+.mobile-menu {
+  display: none;
+  cursor: pointer; 
+}
+
+/* Estilo para as linhas do menu móvel */
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s; 
+}
+
+/* Estilos para quando a tela é menor que 999px, mostrando o menu móvel */
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden; 
+  }
+  /* Estilo para a lista de navegação em telas menores */
+  .nav-list {
+    position: absolute;
+    top: 6vh; 
+    right: 0;
+    width: 50vw; 
+    height: 94vh; 
+    background: #23232e; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-around; 
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in; 
+  }
+  /* Estilo para os itens da lista no menu móvel */
+  .nav-list li {
+    margin-left: 0; 
+    opacity: 0; 
+  }
+  /* Torna visível o ícone de menu no mobile */
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* Quando o menu está ativo, ele se move para dentro da tela */
+.nav-list.active {
+  transform: translateX(0); 
+}
+
+/* Animação para os links do menu (desaparecem para aparecer com efeito de deslizamento) */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+}
+
+/* Animação para as linhas do ícone de menu móvel quando ativo */
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px); 
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0; /* Linha do meio desaparece */
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px); 
+}
+
+html, body {
+  background: black;
+}
+/* Resetando margens, padding e aplicando box-sizing para garantir que tudo seja calculado corretamente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Definindo estilo dos links: cor branca, sem sublinhado e uma transição suave para hover */
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Quando o link for hover, ele ficará com opacidade reduzida para indicar interatividade */
+a:hover {
+  opacity: 0.7;
+}
+
+/* Estilo para a logo */
+.logo {
+  font-size: 22px;
+  letter-spacing: 4px; 
+}
+
+/* Estilo da barra de navegação fixa no topo */
+nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  background: #23232e;
+  height: 6vh; 
+}
+
+/* Estilo para o conteúdo principal, com imagem de fundo e ajustando seu tamanho */
+main {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  height: 92vh;
+  padding-top: 6vh;
+ 
+}
+.home {
+    height: 92vh;
+    padding-top: 6vh;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;  
+    justify-content: center; 
+    align-items: center;
+    margin: 0;
+    background-image: url('img/back.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 50px 20px;
+    height: 100vh;  
+}
+
+.home-content {
+  width: 90%; 
+  text-align: left;
+  padding: 20px; 
+  color: white; 
+  border-radius: 10px; 
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+     font-family: 'Dancing Script', cursive;
+     color: #282D31;
+    line-height: 1.8; 
+    
+}
+
+.btn-contrate {
+    padding: 15px 30px;
+    background-color: #23232e;
+    color: white;
+    font-family: 'Lora', serif;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.nome {
+  font-family: 'Dancing Script', cursive; 
+  font-size: 3rem;
+  font-weight: bold; 
+  color: #FFE390; 
+  margin-bottom: 10px; 
+}
+
+/*
+--    ###          #
+--   #   #         #
+--   #       ###   # ##   # ##    ###
+--    ###   #   #  ##  #  ##  #  #   #
+--       #  #   #  #   #  #      #####
+--   #   #  #   #  ##  #  #      #
+--    ###    ###   # ##   #       ###
+*/
+/* Estilos para as seções */
+section {
+  min-height: 100vh; 
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-sizing: border-box;
+}
+.parte1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Container principal */
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap; 
+}
+
+/* Texto à esquerda */
+.texto-sobre {
+  flex: 1 1 300px;
+  color: white;
+  font-family: 'open sans', cursive;
+}
+
+.texto-sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.texto-sobre p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Imagem à direita com borda azul */
+.imagem-sobre {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center; 
+}
+
+.imagem-sobre img {
+  width: 450px;
+  height: auto;
+  border: 5px solid #8b008b;
+  border-radius: 8px;
+  object-fit: cover;
+  
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imagem-sobre {
+    margin-top: 30px;
+  }
+
+  .texto-sobre h2 {
+    font-size: 2rem;
+  }
+
+  .texto-sobre p {
+    font-size: 1rem;
+  }
+}
+
+
+/*
+--    ###           ##                    #                      #                  ##           #
+--   #   #           #                                           #                 #  #          #
+--   #       ###     #     ###   # ##    ##     ###           ## #   ###           #      ###   ####    ###    ###
+--   #          #    #    #   #  ##  #    #        #         #  ##  #   #         ####   #   #   #     #   #  #
+--   #  ##   ####    #    #####  #        #     ####         #   #  #####          #     #   #   #     #   #   ###
+--   #   #  #   #    #    #      #        #    #   #         #  ##  #              #     #   #   #  #  #   #      #
+--    ###    ####   ###    ###   #       ###    ####          ## #   ###           #      ###     ##    ###   ####
+*/
+.parte2 {
+  background-color: black; 
+  font-family: 'open sans', cursive;
+  padding: 60px 20px;
+  min-height: 100vh; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container da galeria, com flexbox para disposição das imagens */
+.gallery-container {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 20px; 
+  max-width: 1200px; 
+  width: 100%; 
+}
+
+/* Estilo individual para os itens da galeria */
+.gallery-items {
+  background: white; 
+  padding: 10px 10px 40px 10px; 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+  border-radius: 4px; 
+  max-width: 300px; 
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+/* Estilo para as imagens dentro dos itens da galeria */
+.gallery-items img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px; 
+}
+
+/* Efeito de hover nos itens da galeria, aumentando um pouco a escala e rotacionando */
+.gallery-items:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* Estilo para o modal (janela de imagem ampliada) */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999; 
+  left: 0;
+  top: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0.8); 
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilo para o conteúdo do modal */
+.modal-content {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px #0009;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+
+/* Estilo para a imagem dentro do modal */
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh; 
+  object-fit: contain; 
+  border: 8px solid white;
+  box-shadow: 0 0 10px #0005; 
+}
+
+/* Estilo para a legenda da imagem no modal */
+.modal-content p {
+  margin-top: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Botão de fechar no modal */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+/*
+ --    ###                                               ##     #
+--   #   #                                             #  #
+--   #       ###   # ##    ###    ## #  # ##    ###    #      ##     ###    ###
+--   #      #   #  ##  #  #   #  #  #   ##  #      #  ####     #    #   #  #   #
+--   #      #####  #   #  #   #   ##    #       ####   #       #    #      #   #
+--   #   #  #      #   #  #   #  #      #      #   #   #       #    #   #  #   #
+--    ###    ###   #   #   ###    ###   #       ####   #      ###    ###    ###
+--                               #   #
+--                                ###                         ##
+*/
+.parte3 {
+  background-color: black; 
+}
+
+/* Container geral com transparência total */
+.contato-container {
+  font-family: 'open sans', cursive;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  color: white;
+  background: transparent;
+}
+
+/* Lado esquerdo */
+.info-contato {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.info-contato h2 {
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.telefone{
+  color: white; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.telefone:hover {
+  color: red; 
+}
+
+.btn-curriculo {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-curriculo i {
+  margin-right: 8px;
+}
+
+.btn-curriculo:hover {
+  background-color: black;
+  transform: scale(1.05);
+  color: #8b008b;
+}
+/* Lado do formulário */
+.form-contato {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.form-contato h2 {
+  color: white;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.form-contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-contato input,
+.form-contato textarea {
+  font-family: 'Poppins', sans-serif;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+  color: white;
+  border-radius: 4px;
+}
+
+.form-contato input::placeholder,
+.form-contato textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-contato button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.form-contato button:hover {
+  background: white;
+  color: #000;
+}
+
+/*
+--   #####          #      #
+--   #              #      #
+--   #       ###   ####   ####    ###   # ##
+--   ####   #   #   #      #     #   #  ##  #
+--   #      #   #   #      #     #####  #
+--   #      #   #   #  #   #  #  #      #
+--   #       ###     ##     ##    ###   #
+*/
+.site-footer {
+  background-color: #23232e;
+  color: white;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Container do conteúdo do footer */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ícones sociais */
+.footer-socials a {
+  color: white;
+  margin: 0 5px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #a259ff; 
+}
+
+/* Responsivo */
+@media (min-width: 400px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Redes de contato (substitui telefone) */
+.redes-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.redes-contato a:hover {
+  color: #a259ff;
+  opacity: 1;
+}
+
+.redes-contato i {
+  margin-right: 8px;
+  width: 22px;
+}
+
+/* Aviso do formulário */
+#form-aviso {
+  font-size: 0.95rem;
+  color: #a259ff;
+  min-height: 1.2em;
+}

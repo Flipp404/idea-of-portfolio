@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/estilohome.css" />
+    <link rel="icon" type="image/png" href="src/img/Fp2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="src/javahome.js" defer></script>
+    <title>Flipp | Felipe Lemos</title>
+</head>
+<body>
+    <header>
+      <!--
+--   #   #                              #   #
+--   #   #                              #   #
+--   ## ##   ###   # ##   #   #         ##  #   ###   #   #
+--   # # #  #   #  ##  #  #   #         # # #      #  #   #
+--   #   #  #####  #   #  #   #         #  ##   ####   # #
+--   #   #  #      #   #  #  ##         #   #  #   #   # #
+--   #   #   ###   #   #   ## #         #   #   ####    #
+      -->
+      <nav>
+        <a class="logo" href="#home" onclick="scrollPara('home'); return false;">Flipp's</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#sobre" onclick="scrollPara('sobre'); return false;">Sobre</a></li>
+          <li><a href="#projetos" onclick="scrollPara('projetos'); return false;">Projetos</a></li>
+          <li><a href="#contatos" onclick="scrollPara('contatos'); return false;">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+<!--  
+--   #   #
+--   #   #
+--   #   #   ###   ## #    ###   # ##    ###    ## #   ###
+--   #####  #   #  # # #  #   #  ##  #      #  #  #   #   #
+--   #   #  #   #  # # #  #####  ##  #   ####   ##    #####
+--   #   #  #   #  # # #  #      # ##   #   #  #      #
+--   #   #   ###   #   #   ###   #       ####   ###    ###
+--                               #             #   #
+--    
+  -->
+    <section class="home" id="home">
+      <div class="home-content">
+   <h1 class="nome">Felipe Lemos</h1>
+        <p>Desenvolvedor criativo, Fotografo 
+          e apaixonado por tecnologia.</p>
+          <br>
+        <a href="https://www.linkedin.com/in/felipe-lemos-82a927255/" target="_blank" rel="noopener noreferrer" class="btn-contrate">Me contrate</a>
+      </div>
+    </section>
+    <section class="parte1" id="sobre">
+      <div class="sobre-container">
+        <div class="texto-sobre">
+          <h2>Sobre mim</h2>
+          
+          <p>
+            Olá! Me chamo Felipe Lemos, nasci em 2004 e sou apaixonado por tecnologia e arte. Atualmente curso Ciência da Computação e sou formado como técnico em Informática. 
+            A combinação entre lógica e criatividade sempre me guiou, o que me levou a atuar tanto no desenvolvimento web quanto na fotografia.
+          </p>
+          <br>
+          <p>Na fotografia, meu foco é o paisagismo — busco capturar a beleza natural com precisão e sensibilidade, sempre em busca da excelência em cada imagem. 
+            Já no desenvolvimento web, aplico esse mesmo olhar detalhista para criar sites modernos, funcionais e visualmente cativantes. 
+            Este portfólio reúne o melhor dos dois mundos que me movem.</p>
+        </div>
+        <div class="imagem-sobre">
+          <img src="src/img/euf.jpg" alt="Foto de perfil" class="foto-sobre">
+        </div>
+      </div>
+    </section>
+          <!--
+--    ###           ##                    #                      #                  ##           #
+--   #   #           #                                           #                 #  #          #
+--   #       ###     #     ###   # ##    ##     ###           ## #   ###           #      ###   ####    ###    ###
+--   #          #    #    #   #  ##  #    #        #         #  ##  #   #         ####   #   #   #     #   #  #
+--   #  ##   ####    #    #####  #        #     ####         #   #  #####          #     #   #   #     #   #   ###
+--   #   #  #   #    #    #      #        #    #   #         #  ##  #              #     #   #   #  #  #   #      #
+--    ###    ####   ###    ###   #       ###    ####          ## #   ###           #      ###     ##    ###   ####
+-->
+    <section class="parte2" id="projetos">
+            <h1>Algumas obras minhas  </h1> 
+            <br>
+            <div class="gallery-container">
+              <div class="gallery-items">
+                <img src="src/img/aqcua.jpg" alt="agua viva">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/angel.jpg" alt="Igreja">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/beach.jpg" alt="Praia da Barra">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/flower.jpg" alt="Flor">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/me.jpg" alt="Flipp">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/letters.jpg" alt="Cartas">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/nemesis.jpg" alt="Espelhos">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/sun.jpg" alt="por do sol">
+              </div>
+              <div class="gallery-items">
+                <img src="src/img/glass.jpg" alt="Roda gigante">
+              </div>
+            </div>
+            <div class="modal" id="image-modal">
+              <span class="close-btn" onclick="fecharModal()">&times;</span>
+              <div class="modal-content">
+                <img id="modal-img" src="" alt="">
+                <p id="modal-caption"></p>
+              </div>
+            </div>
+      </section>
+              <!--
+ --    ###                                               ##     #
+--   #   #                                             #  #
+--   #       ###   # ##    ###    ## #  # ##    ###    #      ##     ###    ###
+--   #      #   #  ##  #  #   #  #  #   ##  #      #  ####     #    #   #  #   #
+--   #      #####  #   #  #   #   ##    #       ####   #       #    #      #   #
+--   #   #  #      #   #  #   #  #      #      #   #   #       #    #   #  #   #
+--    ###    ###   #   #   ###    ###   #       ####   #      ###    ###    ###
+--                               #   #
+--                                ###                         ##
+      -->
+    <section class="parte3" id="contatos">
+      <div class="contato-container">
+        <div class="info-contato">
+          <h2>Onde estamos</h2>
+          <br>
+          <p>Rio de Janeiro - RJ</p>
+          <br>
+          <p>Vamos conversar?</p>
+          <div class="redes-contato">
+            <a href="https://www.linkedin.com/in/felipe-lemos-82a927255/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/Flipp404" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.instagram.com/idk.felps/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+          <br><br>
+          <h3>Baixe meu currículo</h3>
+          <a href="src/Felipe-Lemos-CV.pdf" download class="btn-curriculo">
+           <i class="fas fa-download"></i> Download Currículo
+          </a>
+        </div>
+        <div class="form-contato">
+          <h2>FORMULÁRIO DE CONTATO</h2>
+          <form id="form-contato">
+            <input type="text" placeholder="Insira seu Nome" required>
+            <input type="email" placeholder="Insira seu email" required>
+            <textarea placeholder="Digite aqui sua mensagem" rows="5" required></textarea>
+            <button type="submit">ENVIAR</button>
+            <p id="form-aviso" role="status"></p>
+          </form>
+        </div>
+      </div>
+
+          </section> 
+<!--
+--   #####          #      #
+--   #              #      #
+--   #       ###   ####   ####    ###   # ##
+--   ####   #   #   #      #     #   #  ##  #
+--   #      #   #   #      #     #####  #
+--   #      #   #   #  #   #  #  #      #
+--   #       ###     ##     ##    ###   #
+-->
+          <footer class="site-footer">
+            <div class="footer-content">
+              <p>&copy; 2025 Flipp's. Todos os direitos reservados.</p>
+              <div class="footer-socials">
+                <a href="https://www.instagram.com/idk.felps/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Flipp404"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/felipe-lemos-82a927255/"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </footer>
+  </body>
+</html>
